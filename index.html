@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RuangPulih - Ruang Aman untuk Bekerja, Berkembang, dan Menjadi Diri Sendiri</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="landing-body">
+
+  <!-- Top Demo Switcher Bar -->
+  <div class="demo-banner">
+    <div>🌱 <strong>RuangPulih UI/UX Prototype</strong> &bull; Halaman Landing Page (Beranda Publik)</div>
+    <div class="demo-banner-links">
+      <a href="dashboard.html" class="btn btn-primary btn-sm" style="padding: 4px 14px; font-size: 0.78rem; background: #ffffff; color: #17382c; font-weight: 700;">
+        Buka Dashboard Pengguna (Alex) &rarr;
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="landing-header">
+    <div class="landing-header-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 25C7 25 9.5 13 20 8C20 8 20.5 17 12 21" stroke="#224939" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 21C12 21 16 22 25 15" stroke="#3D755C" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M7 25C11 23 15 20.5 18 16" stroke="#224939" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+        <span>RuangPulih</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="landing-nav">
+        <a href="index.html" class="landing-nav-link active">Beranda</a>
+        <a href="#tentang" class="landing-nav-link">Tentang Kami</a>
+        <a href="#layanan" class="landing-nav-link">Layanan</a>
+        <a href="#artikel" class="landing-nav-link">Artikel</a>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="landing-actions">
+        <button class="search-btn-icon" title="Cari topik atau informasi...">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <a href="dashboard.html" class="btn btn-outline btn-sm header-auth-btn">Masuk</a>
+        <a href="dashboard.html" class="btn btn-primary btn-sm header-auth-btn">Daftar</a>
+        <button class="landing-mobile-toggle" id="landing-mobile-toggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="landing-mobile-menu" id="landing-mobile-menu">
+      <a href="index.html" class="mobile-nav-link active">Beranda</a>
+      <a href="#tentang" class="mobile-nav-link">Tentang Kami</a>
+      <a href="#layanan" class="mobile-nav-link">Layanan</a>
+      <a href="#artikel" class="mobile-nav-link">Artikel</a>
+      <div class="mobile-menu-actions">
+        <a href="dashboard.html" class="btn btn-outline btn-sm" style="flex:1;">Masuk</a>
+        <a href="dashboard.html" class="btn btn-primary btn-sm" style="flex:1;">Daftar</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-grid">
+      <!-- Left Hero Text Content -->
+      <div class="hero-content">
+        <span class="hero-tag">UNTUK SEMUA PEKERJA</span>
+        
+        <h1 class="hero-title">
+          Ruang aman untuk bekerja, berkembang, dan menjadi diri sendiri.
+        </h1>
+        
+        <p class="hero-desc">
+          Dukungan psikologis yang mudah diakses untuk membantu kamu menghadapi tantangan kerja dan menjalani hidup yang lebih seimbang.
+        </p>
+        
+        <div class="hero-cta-group">
+          <a href="dashboard.html" class="btn btn-primary btn-lg">
+            Mulai Sekarang
+          </a>
+          <a href="#layanan" class="btn btn-outline btn-lg">
+            Pelajari Lebih Lanjut
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Hero Illustration -->
+      <div class="hero-visual">
+        <div class="hero-artwork-wrapper">
+          <img src="assets/hero-woman.jpg" alt="Ruang aman untuk bekerja, berkembang, dan menjadi diri sendiri" class="hero-artwork-img" id="hero-img-element">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 Feature Highlights Row (Exact match from images) -->
+  <section class="features-section" id="layanan">
+    <div class="features-grid">
+      <!-- Feature 1 -->
+      <a href="dashboard.html#refleksi" class="feature-pill-card">
+        <div class="feature-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <h4>Refleksi Mandiri</h4>
+        <p>Kenali diri dan pahami perasaanmu setiap hari.</p>
+      </a>
+
+      <!-- Feature 2 -->
+      <a href="dashboard.html#konseling" class="feature-pill-card">
+        <div class="feature-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h4>Konseling Profesional</h4>
+        <p>Dukungan dari tenaga ahli psikolog sesuai kebutuhanmu.</p>
+      </a>
+
+      <!-- Feature 3 -->
+      <a href="dashboard.html#program" class="feature-pill-card">
+        <div class="feature-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </div>
+        <h4>Program Mandiri</h4>
+        <p>Materi dan latihan praktis untuk keseharian kerja.</p>
+      </a>
+
+      <!-- Feature 4 -->
+      <div class="feature-pill-card">
+        <div class="feature-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <h4>Akses Fleksibel</h4>
+        <p>Kapan saja, di mana saja dengan perangkat pilihanmu.</p>
+      </div>
+
+      <!-- Feature 5 -->
+      <a href="dashboard.html#privasi" class="feature-pill-card">
+        <div class="feature-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <h4>Privasi Terjamin</h4>
+        <p>Data kamu aman, terjaga dan sepenuhnya rahasia.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Quote Banner Section -->
+  <section class="landing-quote-banner" id="tentang">
+    <div style="position: relative; z-index: 2;">
+      <h3>Kesehatan mental bukan kemewahan, melainkan fondasi berkarya.</h3>
+      <p>
+        RuangPulih hadir mendampingi pekerja Indonesia mengatasi burnout, mengelola stres beban kerja, dan memelihara hubungan profesional yang sehat dan bermakna.
+      </p>
+      <a href="dashboard.html" class="btn btn-secondary btn-lg" style="background:#ffffff; color:#17382c; font-weight:700;">
+        Mulai Check-in Hari Ini
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="landing-footer">
+    <div class="landing-footer-grid">
+      <div class="landing-footer-col">
+        <div class="brand-logo" style="margin-bottom: 14px;">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 25C7 25 9.5 13 20 8C20 8 20.5 17 12 21" stroke="#224939" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M12 21C12 21 16 22 25 15" stroke="#3D755C" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <span>RuangPulih</span>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 320px;">
+          Platform kesehatan mental dan pendampingan psikologis terpercaya bagi para pekerja profesional di seluruh Indonesia.
+        </p>
+      </div>
+
+      <div class="landing-footer-col">
+        <h5>Layanan</h5>
+        <ul>
+          <li><a href="dashboard.html#refleksi">Refleksi Mandiri</a></li>
+          <li><a href="dashboard.html#konseling">Konseling Profesional</a></li>
+          <li><a href="dashboard.html#program">Program Mandiri</a></li>
+          <li><a href="dashboard.html#rencana">Rencana Tindakan</a></li>
+        </ul>
+      </div>
+
+      <div class="landing-footer-col">
+        <h5>Edukasi & Bantuan</h5>
+        <ul>
+          <li><a href="dashboard.html#artikel">Artikel & Edukasi</a></li>
+          <li><a href="dashboard.html#privasi">Pusat Bantuan</a></li>
+          <li><a href="dashboard.html#privasi">Batasan Layanan</a></li>
+          <li><a href="dashboard.html#privasi">Kontak Krisis</a></li>
+        </ul>
+      </div>
+
+      <div class="landing-footer-col">
+        <h5>Legal & Privasi</h5>
+        <ul>
+          <li><a href="dashboard.html#privasi">Kebijakan Privasi</a></li>
+          <li><a href="dashboard.html#privasi">Ketentuan Layanan</a></li>
+          <li><a href="dashboard.html#privasi">Kode Etik Psikolog</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="landing-footer-bottom">
+      <div>&copy; 2026 RuangPulih Indonesia. Seluruh hak cipta dilindungi.</div>
+      <div>Dibuat dengan kepedulian untuk kesehatan mental pekerja Indonesia.</div>
+    </div>
+  </footer>
+
+  <script src="assets/illustrations.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('landing-mobile-toggle');
+      const menu = document.getElementById('landing-mobile-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('open');
+        });
+        menu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            menu.classList.remove('open');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

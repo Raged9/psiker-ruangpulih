@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Pengguna - RuangPulih</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Floating Demo Navigation Bar for easy page hopping -->
+  <div class="demo-banner">
+    <div>
+      🌱 <strong>RuangPulih Demo Switcher</strong> &bull; Klik halaman untuk beralih tampilan:
+    </div>
+    <div class="demo-banner-links">
+      <a href="index.html" class="demo-link-chip">&larr; Beranda Publik</a>
+      <a href="#beranda" class="demo-link-chip active" data-view="beranda">Beranda Pengguna</a>
+      <a href="#refleksi" class="demo-link-chip" data-view="refleksi">Refleksi Mandiri</a>
+      <a href="#program" class="demo-link-chip" data-view="program">Program Mandiri</a>
+      <a href="#konseling" class="demo-link-chip" data-view="konseling">Konseling Profesional</a>
+      <a href="#artikel" class="demo-link-chip" data-view="artikel">Artikel & Edukasi</a>
+      <a href="#rencana" class="demo-link-chip" data-view="rencana">Rencana Tindakan</a>
+      <a href="#profil" class="demo-link-chip" data-view="profil">Profil Saya</a>
+      <a href="#privasi" class="demo-link-chip" data-view="privasi">Privasi & Bantuan</a>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <!-- Left Sidebar (Matching Image 2 & Image 4) -->
+    <aside class="app-sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-header-row">
+          <a href="index.html" class="brand-logo">
+            <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 25C7 25 9.5 13 20 8C20 8 20.5 17 12 21" stroke="#224939" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M12 21C12 21 16 22 25 15" stroke="#3D755C" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M7 25C11 23 15 20.5 18 16" stroke="#224939" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+            <span>RuangPulih</span>
+          </a>
+          <button class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close sidebar">&times;</button>
+        </div>
+      </div>
+
+      <ul class="sidebar-nav">
+        <li>
+          <a href="#beranda" class="sidebar-link active" data-view="beranda">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Beranda</span>
+          </a>
+        </li>
+        <li>
+          <a href="#refleksi" class="sidebar-link" data-view="refleksi">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+            </svg>
+            <span>Refleksi Harian</span>
+          </a>
+        </li>
+        <li>
+          <a href="#program" class="sidebar-link" data-view="program">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <span>Program Mandiri</span>
+          </a>
+        </li>
+        <li>
+          <a href="#konseling" class="sidebar-link" data-view="konseling">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Konseling Profesional</span>
+          </a>
+        </li>
+        <li>
+          <a href="#artikel" class="sidebar-link" data-view="artikel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            <span>Artikel & Edukasi</span>
+          </a>
+        </li>
+        <li>
+          <a href="#rencana" class="sidebar-link" data-view="rencana">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+              <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+              <polyline points="9 11 12 14 22 4"></polyline>
+            </svg>
+            <span>Rencana Tindakan</span>
+          </a>
+        </li>
+        <li>
+          <a href="#profil" class="sidebar-link" data-view="profil">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Profil Saya</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="#privasi" class="sidebar-link" data-view="privasi" style="padding: 10px 14px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+          <span style="font-size:0.86rem;">Privasi & Bantuan</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Sidebar Mobile Backdrop -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      <!-- App Topbar -->
+      <div class="app-topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" title="Toggle menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          
+          <nav class="topbar-nav">
+            <a href="#beranda" data-view="beranda" class="active">Beranda</a>
+            <a href="#program" data-view="program">Layanan</a>
+            <a href="#artikel" data-view="artikel">Artikel</a>
+            <a href="#privasi" data-view="privasi">FAQ</a>
+          </nav>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Notification Bell -->
+          <button class="icon-btn" title="Notifikasi Pengingat">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notification-badge"></span>
+          </button>
+
+          <!-- User Menu Dropdown Trigger -->
+          <div class="user-profile-menu" data-target-view="profil">
+            <div class="user-avatar" id="topbar-user-avatar">
+              <!-- Avatar SVG injected -->
+            </div>
+            <span class="user-name">Halo, Alex</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           VIEW 1: BERANDA DASHBOARD (Hai, Alex!)
+           ===================================================================== -->
+      <div class="app-view active-view" id="view-beranda">
+        <div class="dashboard-grid">
+          <!-- Left Main Column -->
+          <div class="dash-main-col">
+            <!-- Greeting & Mood Tracker Card -->
+            <div class="dash-greeting-card">
+              <h2>Hai, Alex! 👋</h2>
+              <div class="mood-question">Bagaimana perasaanmu hari ini?</div>
+
+              <!-- Interactive 5-Mood Face Selector -->
+              <div class="mood-picker">
+                <!-- Sangat Baik -->
+                <button class="mood-btn" data-mood="sangat-baik">
+                  <div class="mood-icon-circle" style="background-color: var(--mood-sangat-baik-bg); color: var(--mood-sangat-baik);">
+                    😊
+                  </div>
+                  <span class="mood-label">Sangat Baik</span>
+                </button>
+
+                <!-- Baik -->
+                <button class="mood-btn selected" data-mood="baik">
+                  <div class="mood-icon-circle" style="background-color: var(--mood-baik-bg); color: var(--mood-baik);">
+                    🙂
+                  </div>
+                  <span class="mood-label">Baik</span>
+                </button>
+
+                <!-- Cukup -->
+                <button class="mood-btn" data-mood="cukup">
+                  <div class="mood-icon-circle" style="background-color: var(--mood-cukup-bg); color: var(--mood-cukup);">
+                    😐
+                  </div>
+                  <span class="mood-label">Cukup</span>
+                </button>
+
+                <!-- Kurang Baik -->
+                <button class="mood-btn" data-mood="kurang-baik">
+                  <div class="mood-icon-circle" style="background-color: var(--mood-kurang-baik-bg); color: var(--mood-kurang-baik);">
+                    🙁
+                  </div>
+                  <span class="mood-label">Kurang Baik</span>
+                </button>
+
+                <!-- Buruk -->
+                <button class="mood-btn" data-mood="buruk">
+                  <div class="mood-icon-circle" style="background-color: var(--mood-buruk-bg); color: var(--mood-buruk);">
+                    😞
+                  </div>
+                  <span class="mood-label">Buruk</span>
+                </button>
+              </div>
+
+              <!-- Mood Feedback Toast -->
+              <div class="mood-feedback-toast" style="display: block;">
+                🌿 Senang mendengarnya! Pertahankan ritme kerja yang nyaman dan teratur hari ini.
+              </div>
+            </div>
+
+            <!-- Streak Motivation Banner Card -->
+            <div class="streak-card">
+              <div class="streak-illustration" id="streak-plant-slot">
+                <!-- Plant pot SVG injected -->
+              </div>
+              <div class="streak-text">
+                <h4>Kamu sudah 3 hari berturut-turut melakukan check-in!</h4>
+                <p>Terus jaga langkah kecilmu untuk perubahan besar dalam hidupmu.</p>
+              </div>
+            </div>
+
+            <!-- Section: Lanjutkan Perjalananmu (3 action cards) -->
+            <div class="journey-section">
+              <h3>Lanjutkan Perjalananmu</h3>
+              
+              <div class="journey-grid">
+                <!-- Card 1: Refleksi Diri -->
+                <div class="journey-card">
+                  <div class="journey-card-top">
+                    <div class="journey-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                        <path d="M2 2l7.586 7.586"></path>
+                        <circle cx="11" cy="11" r="2"></circle>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4>Refleksi Diri</h4>
+                      <p>Kenali apa yang kamu rasakan saat ini.</p>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary btn-sm journey-btn" data-target-view="refleksi">
+                    Mulai Refleksi
+                  </button>
+                </div>
+
+                <!-- Card 2: Jadwal Konseling -->
+                <div class="journey-card">
+                  <div class="journey-card-top">
+                    <div class="journey-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4>Jadwal Konseling</h4>
+                      <p>Kamu memiliki 1 sesi mendatang.</p>
+                    </div>
+                  </div>
+                  <button class="btn btn-secondary btn-sm journey-btn" data-target-view="konseling">
+                    Lihat Jadwal
+                  </button>
+                </div>
+
+                <!-- Card 3: Rencana Tindakan -->
+                <div class="journey-card">
+                  <div class="journey-card-top">
+                    <div class="journey-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4>Rencana Tindakan</h4>
+                      <p>Lanjutkan langkah kecilmu minggu ini.</p>
+                    </div>
+                  </div>
+                  <button class="btn btn-secondary btn-sm journey-btn" data-target-view="rencana">
+                    Lihat Rencana
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Sidebar Widgets Column -->
+          <div class="dash-side-col">
+            <!-- Widget 1: Pengingat (Reminders) -->
+            <div class="widget-card">
+              <div class="widget-header">
+                <h4>Pengingat</h4>
+                <a href="#rencana" class="widget-link" data-target-view="rencana">Lihat Semua &rarr;</a>
+              </div>
+
+              <div class="reminder-list">
+                <!-- Item 1: Sesi konseling -->
+                <div class="reminder-item" data-target-view="konseling" style="cursor:pointer;">
+                  <div class="reminder-icon" style="background:#eaf2ec; color:#224939;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                    </svg>
+                  </div>
+                  <div class="reminder-details">
+                    <h5>Sesi konseling dengan Dewi Saraswati</h5>
+                    <p>Senin, 21 Juli 2025 &bull; 10.00 WIB</p>
+                  </div>
+                </div>
+
+                <!-- Item 2: Check-in harian -->
+                <div class="reminder-item" data-target-view="refleksi" style="cursor:pointer;">
+                  <div class="reminder-icon" style="background:#f0fff4; color:#38a169;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="reminder-details">
+                    <h5>Check-in harian</h5>
+                    <p>Sudah saatnya melakukan check-in hari ini.</p>
+                  </div>
+                </div>
+
+                <!-- Item 3: Latihan mindfulness -->
+                <div class="reminder-item" data-target-view="program" style="cursor:pointer;">
+                  <div class="reminder-icon" style="background:#e6fffa; color:#319795;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                    </svg>
+                  </div>
+                  <div class="reminder-details">
+                    <h5>Latihan mindfulness</h5>
+                    <p>Lanjutkan latihan minggu ini untuk kelola stres.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Widget 2: Artikel untuk Kamu -->
+            <div class="widget-card">
+              <div class="widget-header">
+                <h4>Artikel untuk Kamu</h4>
+                <a href="#artikel" class="widget-link" data-target-view="artikel">Lihat Semua &rarr;</a>
+              </div>
+
+              <div class="rec-article-card" data-target-view="artikel">
+                <div class="rec-article-thumb" id="rec-article-thumb-slot">
+                  <!-- Injected SVG thumb -->
+                </div>
+                <div class="rec-article-info">
+                  <h5>Mengelola Stres Kerja di Tengah Tuntutan yang Tinggi</h5>
+                  <span>Artikel &bull; 5 menit baca</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           VIEW 2: REFLEKSI MANDIRI (Wizard Stepper & Emotional Journal)
+           ===================================================================== -->
+      <div class="app-view" id="view-refleksi">
+        <div class="view-header">
+          <div class="view-header-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+            </svg>
+          </div>
+          <div class="view-title-wrap">
+            <h2>Refleksi Mandiri</h2>
+            <p>Luangkan waktu sejenak untuk memahami perasaanmu. Tidak ada jawaban yang benar atau salah.</p>
+          </div>
+        </div>
+
+        <div class="refleksi-layout">
+          <!-- Stepper Navigation (Left) -->
+          <div class="stepper-nav">
+            <div class="stepper-step active" data-step="1">
+              <div class="stepper-num">1</div>
+              <span>Check-in Emosional</span>
+            </div>
+            <div class="stepper-step" data-step="2">
+              <div class="stepper-num">2</div>
+              <span>Pahami Situasimu</span>
+            </div>
+            <div class="stepper-step" data-step="3">
+              <div class="stepper-num">3</div>
+              <span>Temukan Makna</span>
+            </div>
+            <div class="stepper-step" data-step="4">
+              <div class="stepper-num">4</div>
+              <span>Rencanakan Langkah</span>
+            </div>
+            <div class="stepper-step" data-step="5">
+              <div class="stepper-num">5</div>
+              <span>Simpan Refleksi</span>
+            </div>
+          </div>
+
+          <!-- Question Card (Center) -->
+          <div class="refleksi-card">
+            <h3 class="refleksi-question-title">Apa yang paling kamu rasakan saat ini?</h3>
+            
+            <!-- 6 Emotion Palette Buttons -->
+            <div class="emotions-palette">
+              <button class="emotion-card-btn active" data-emotion="tenang">
+                <span style="font-size: 2rem;">😌</span>
+                <span>Tenang</span>
+              </button>
+              <button class="emotion-card-btn" data-emotion="baik">
+                <span style="font-size: 2rem;">😊</span>
+                <span>Baik</span>
+              </button>
+              <button class="emotion-card-btn" data-emotion="cukup">
+                <span style="font-size: 2rem;">😐</span>
+                <span>Cukup</span>
+              </button>
+              <button class="emotion-card-btn" data-emotion="cemas">
+                <span style="font-size: 2rem;">😰</span>
+                <span>Cemas</span>
+              </button>
+              <button class="emotion-card-btn" data-emotion="sedih">
+                <span style="font-size: 2rem;">😢</span>
+                <span>Sedih</span>
+              </button>
+              <button class="emotion-card-btn" data-emotion="marah">
+                <span style="font-size: 2rem;">😠</span>
+                <span>Marah</span>
+              </button>
+            </div>
+
+            <!-- Notes / Textarea -->
+            <div class="journal-textarea-group">
+              <label class="refleksi-question-sub">Ceritakan lebih lanjut (opsional)</label>
+              <textarea class="journal-textarea" placeholder="Tuliskan apa yang kamu rasakan atau pikirkan saat ini..."></textarea>
+              <div class="char-counter">0/500</div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-start;">
+              <button class="btn btn-primary refleksi-next-btn">
+                Lanjutkan &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- Quote Widget (Right) -->
+          <div class="quote-inspiration-card">
+            <p class="quote-text">
+              &ldquo;Tidak apa-apa merasa lelah. Yang penting kamu tetap melangkah.&rdquo;
+            </p>
+            <div class="quote-plant-ill" id="quote-plant-slot">
+              <!-- Injected plant illustration -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           VIEW 3: PROGRAM MANDIRI (Materi & Latihan)
+           ===================================================================== -->
+      <div class="app-view" id="view-program">
+        <div class="view-header">
+          <div class="view-header-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <div class="view-title-wrap">
+            <h2>Program Mandiri</h2>
+            <p>Materi dan latihan yang dapat kamu akses kapan saja untuk membantu kesejahteraanmu di tempat kerja.</p>
+          </div>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-category="semua">Semua</button>
+          <button class="filter-tab" data-category="stres">Stres Kerja</button>
+          <button class="filter-tab" data-category="manajemen">Manajemen Diri</button>
+          <button class="filter-tab" data-category="komunikasi">Komunikasi</button>
+          <button class="filter-tab" data-category="wlb">Work-Life Balance</button>
+        </div>
+
+        <!-- Program Cards Grid (Matches Image 3) -->
+        <div class="program-cards-grid">
+          <!-- Card 1 -->
+          <div class="program-card" data-category="stres">
+            <div class="program-card-thumb" id="program-thumb-1"></div>
+            <div class="program-card-body">
+              <div>
+                <h4 class="program-card-title">Mengelola Stres Kerja</h4>
+                <div class="program-card-meta">Artikel &bull; 10 menit</div>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="alert('Membuka materi: Mengelola Stres Kerja')">Baca Sekarang</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="program-card" data-category="manajemen">
+            <div class="program-card-thumb" id="program-thumb-2"></div>
+            <div class="program-card-body">
+              <div>
+                <h4 class="program-card-title">Latihan Mindfulness untuk Fokus</h4>
+                <div class="program-card-meta">Latihan &bull; 5 menit</div>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="alert('Memulai panduan audio mindfulness 5 menit...')">Mulai Latihan</button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="program-card" data-category="wlb">
+            <div class="program-card-thumb" id="program-thumb-3"></div>
+            <div class="program-card-body">
+              <div>
+                <h4 class="program-card-title">Menetapkan Batas antara Kerja dan Kehidupan Pribadi</h4>
+                <div class="program-card-meta">Artikel &bull; 8 menit</div>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="alert('Membuka materi: Menetapkan Batas Kerja')">Baca Sekarang</button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="program-card" data-category="stres">
+            <div class="program-card-thumb" id="program-thumb-4"></div>
+            <div class="program-card-body">
+              <div>
+                <h4 class="program-card-title">Teknik Grounding saat Panik di Kantor</h4>
+                <div class="program-card-meta">Latihan &bull; 7 menit</div>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="alert('Memulai latihan teknik grounding 5-4-3-2-1...')">Mulai Latihan</button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="program-card" data-category="komunikasi">
+            <div class="program-card-thumb" id="program-thumb-5"></div>
+            <div class="program-card-body">
+              <div>
+                <h4 class="program-card-title">Komunikasi Efektif dengan Atasan dan Kolega</h4>
+                <div class="program-card-meta">Artikel &bull; 12 menit</div>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="alert('Membuka materi: Komunikasi Efektif')">Baca Sekarang</button>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="program-card" data-category="wlb">
+            <div class="program-card-thumb" id="program-thumb-6"></div>
+            <div class="program-card-body">
+              <div>
+                <h4 class="program-card-title">Membangun Rutinitas Pagi yang Menenangkan</h4>
+                <div class="program-card-meta">Latihan &bull; 10 menit</div>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="alert('Memulai panduan rutinitas pagi...')">Mulai Latihan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           VIEW 4: KONSELING PROFESIONAL (Konselor List & Booking)
+           ===================================================================== -->
+      <div class="app-view" id="view-konseling">
+        <div class="view-header">
+          <div class="view-header-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <div class="view-title-wrap">
+            <h2>Konseling Profesional</h2>
+            <p>Temukan konselor yang sesuai dengan kebutuhanmu.</p>
+          </div>
+        </div>
+
+        <!-- Search & Filter Bar -->
+        <div class="search-filter-bar">
+          <div class="search-input-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" class="search-input counselor-search-input" placeholder="Cari nama konselor atau topik (misal: stres, burnout)...">
+          </div>
+          <button class="btn btn-outline" style="border-radius: var(--radius-pill); padding: 11px 20px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+            Filter
+          </button>
+        </div>
+
+        <!-- Counselor Cards List -->
+        <div class="counselors-list">
+          <!-- Counselor 1: Dewi Saraswati -->
+          <div class="counselor-card">
+            <div class="counselor-info-left">
+              <div class="counselor-avatar" id="avatar-counselor-dewi"></div>
+              <div class="counselor-details">
+                <h4>Dewi Saraswati, M.Psi., Psikolog</h4>
+                <div class="counselor-tags">
+                  <span class="counselor-tag">Stres Kerja</span>
+                  <span class="counselor-tag">Burnout</span>
+                  <span class="counselor-tag">Manajemen Diri</span>
+                </div>
+                <div class="counselor-rating">
+                  <span class="star">★</span> <strong>4.9</strong> &bull; 120+ sesi konseling
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm btn-counselor-profile" data-name="Dewi Saraswati, M.Psi., Psikolog" data-role="Psikolog Klinis Dewasa" data-spec="Stres Kerja, Burnout, Regulasi Emosi">
+              Lihat Profil
+            </button>
+          </div>
+
+          <!-- Counselor 2: Raka Pratama -->
+          <div class="counselor-card">
+            <div class="counselor-info-left">
+              <div class="counselor-avatar" id="avatar-counselor-raka"></div>
+              <div class="counselor-details">
+                <h4>Raka Pratama, M.Psi., Psikolog</h4>
+                <div class="counselor-tags">
+                  <span class="counselor-tag">Komunikasi</span>
+                  <span class="counselor-tag">Konflik Kerja</span>
+                  <span class="counselor-tag">Work-Life Balance</span>
+                </div>
+                <div class="counselor-rating">
+                  <span class="star">★</span> <strong>4.8</strong> &bull; 90+ sesi konseling
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm btn-counselor-profile" data-name="Raka Pratama, M.Psi., Psikolog" data-role="Psikolog Industri & Organisasi" data-spec="Komunikasi Asertif, Resolusi Konflik, Karir">
+              Lihat Profil
+            </button>
+          </div>
+
+          <!-- Counselor 3: Siti Aulia -->
+          <div class="counselor-card">
+            <div class="counselor-info-left">
+              <div class="counselor-avatar" id="avatar-counselor-siti"></div>
+              <div class="counselor-details">
+                <h4>Siti Aulia, M.Psi., Psikolog</h4>
+                <div class="counselor-tags">
+                  <span class="counselor-tag">Kecemasan</span>
+                  <span class="counselor-tag">Adaptasi Karier</span>
+                  <span class="counselor-tag">Pengembangan Diri</span>
+                </div>
+                <div class="counselor-rating">
+                  <span class="star">★</span> <strong>4.9</strong> &bull; 150+ sesi konseling
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm btn-counselor-profile" data-name="Siti Aulia, M.Psi., Psikolog" data-role="Psikolog Klinis & Konselor Karir" data-spec="Manajemen Kecemasan, Adaptasi Transisi Kerja, Percaya Diri">
+              Lihat Profil
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           VIEW 5: ARTIKEL & EDUKASI
+           ===================================================================== -->
+      <div class="app-view" id="view-artikel">
+        <div class="view-header">
+          <div class="view-header-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+          </div>
+          <div class="view-title-wrap">
+            <h2>Artikel & Edukasi</h2>
+            <p>Wawasan untuk mendukung kesejahteraanmu di dunia kerja.</p>
+          </div>
+        </div>
+
+        <div class="filter-tabs">
+          <button class="filter-tab active">Semua</button>
+          <button class="filter-tab">Stres Kerja</button>
+          <button class="filter-tab">Karier</button>
+          <button class="filter-tab">Komunikasi</button>
+          <button class="filter-tab">Keseimbangan Hidup</button>
+          <button class="filter-tab">Kesehatan Mental</button>
+        </div>
+
+        <div class="articles-grid">
+          <!-- Article 1 -->
+          <div class="article-card" onclick="alert('Membuka artikel: Mengenali Tanda-Tanda Burnout dan Cara Mengatasinya')">
+            <div class="article-card-thumb" id="article-thumb-1"></div>
+            <div class="article-card-body">
+              <h4 class="article-card-title">Mengenali Tanda-Tanda Burnout dan Cara Mengatasinya</h4>
+              <div class="article-card-footer">8 menit baca &bull; Ditinjau oleh Psikolog</div>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="article-card" onclick="alert('Membuka artikel: Komunikasi Asertif di Tempat Kerja')">
+            <div class="article-card-thumb" id="article-thumb-2"></div>
+            <div class="article-card-body">
+              <h4 class="article-card-title">Komunikasi Asertif di Tempat Kerja Tanpa Merasa Bersalah</h4>
+              <div class="article-card-footer">6 menit baca &bull; Tips Praktis</div>
+            </div>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="article-card" onclick="alert('Membuka artikel: Tips Mengelola Waktu untuk Hidup Lebih Seimbang')">
+            <div class="article-card-thumb" id="article-thumb-3"></div>
+            <div class="article-card-body">
+              <h4 class="article-card-title">Tips Mengelola Waktu untuk Hidup Lebih Seimbang</h4>
+              <div class="article-card-footer">7 menit baca &bull; Manajemen Diri</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           VIEW 6: RENCANA TINDAKAN (Action Plan Checklist)
+           ===================================================================== -->
+      <div class="app-view" id="view-rencana">
+        <div class="action-plan-header">
+          <div class="view-header" style="margin-bottom:0;">
+            <div class="view-header-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                <polyline points="9 11 12 14 22 4"></polyline>
+              </svg>
+            </div>
+            <div class="view-title-wrap">
+              <h2>Rencana Tindakan</h2>
+              <p>Langkah kecil hari ini untuk perubahan yang lebih baik.</p>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-sm btn-add-plan">
+            + Tambah Rencana
+          </button>
+        </div>
+
+        <!-- Status Filter Tabs -->
+        <div class="filter-tabs" style="margin-top: 24px;">
+          <button class="filter-tab action-tab active" data-status="dalam-proses">Dalam Proses</button>
+          <button class="filter-tab action-tab" data-status="selesai">Selesai</button>
+          <button class="filter-tab action-tab" data-status="arsip">Arsip</button>
+        </div>
+
+        <!-- Checklist Items (Matches Image 4) -->
+        <div class="action-checklist">
+          <!-- Item 1 -->
+          <div class="checklist-card">
+            <div class="checklist-left">
+              <div class="custom-checkbox"></div>
+              <span class="checklist-title">Melakukan latihan mindfulness 3x seminggu</span>
+            </div>
+            <div class="checklist-right">
+              <span>21 Juli 2025 &gt;</span>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="checklist-card">
+            <div class="checklist-left">
+              <div class="custom-checkbox"></div>
+              <span class="checklist-title">Membatasi bekerja setelah pukul 20.00</span>
+            </div>
+            <div class="checklist-right">
+              <span>Minggu ini &gt;</span>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="checklist-card">
+            <div class="checklist-left">
+              <div class="custom-checkbox"></div>
+              <span class="checklist-title">Membicarakan beban kerja dengan atasan</span>
+            </div>
+            <div class="checklist-right">
+              <span>Minggu ini &gt;</span>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="checklist-card">
+            <div class="checklist-left">
+              <div class="custom-checkbox"></div>
+              <span class="checklist-title">Melanjutkan sesi konseling</span>
+            </div>
+            <div class="checklist-right">
+              <span>28 Juli 2025 &gt;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           VIEW 7: PROFIL SAYA
+           ===================================================================== -->
+      <div class="app-view" id="view-profil">
+        <!-- User Bio Top Card -->
+        <div class="profile-user-card">
+          <div class="profile-user-left">
+            <div class="profile-large-avatar" id="profile-user-avatar-slot"></div>
+            <div class="profile-user-info">
+              <h3>Alex</h3>
+              <p>alex@email.com &bull; Akun Terverifikasi</p>
+            </div>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="alert('Mode edit profil dibuka.')">
+            Edit Profil
+          </button>
+        </div>
+
+        <!-- 6 Setting / Feature Cards Grid (Matches Image 4) -->
+        <div class="profile-menu-grid">
+          <div class="profile-menu-card" onclick="alert('Membuka: Data Pribadi')">
+            <div class="profile-menu-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <h4>Data Pribadi</h4>
+          </div>
+
+          <div class="profile-menu-card" onclick="alert('Membuka: Jadwal Konseling')">
+            <div class="profile-menu-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+              </svg>
+            </div>
+            <h4>Jadwal Konseling</h4>
+          </div>
+
+          <div class="profile-menu-card" onclick="alert('Membuka: Preferensi Layanan')">
+            <div class="profile-menu-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+            <h4>Preferensi Layanan</h4>
+          </div>
+
+          <div class="profile-menu-card" data-target-view="rencana">
+            <div class="profile-menu-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 11 12 14 22 4"></polyline>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+              </svg>
+            </div>
+            <h4>Rencana Tindakan</h4>
+          </div>
+
+          <div class="profile-menu-card" data-target-view="refleksi">
+            <div class="profile-menu-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 14 14"></polyline>
+              </svg>
+            </div>
+            <h4>Riwayat Refleksi</h4>
+          </div>
+
+          <div class="profile-menu-card" onclick="alert('Membuka: Keamanan dan Privasi')">
+            <div class="profile-menu-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h4>Keamanan dan Privasi</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           VIEW 8: PRIVASI DAN BANTUAN
+           ===================================================================== -->
+      <div class="app-view" id="view-privasi">
+        <div class="view-header">
+          <div class="view-header-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="view-title-wrap">
+            <h2>Privasi dan Bantuan</h2>
+            <p>Pusat informasi perlindungan data, batasan layanan, serta kontak bantuan krisis.</p>
+          </div>
+        </div>
+
+        <div class="privacy-list">
+          <!-- Item 1: Kebijakan Privasi -->
+          <div class="privacy-item-card" onclick="alert('Kebijakan Privasi: Semua sesi refleksi dan konseling dienkripsi dengan standar AES-256 dan dilindungi kerahasiaan medis psikologis.')">
+            <div class="privacy-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="privacy-details">
+              <h4>Kebijakan Privasi</h4>
+              <p>Kami berkomitmen melindungi data dan kerahasiaanmu sepenuhnya.</p>
+            </div>
+          </div>
+
+          <!-- Item 2: Batasan Layanan -->
+          <div class="privacy-item-card" onclick="alert('Batasan Layanan: RuangPulih merupakan platform konseling suportif dan edukatif, bukan unit gawat darurat psikiatri rawat inap.')">
+            <div class="privacy-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <div class="privacy-details">
+              <h4>Batasan Layanan</h4>
+              <p>Informasi tentang kemampuan dan batas layanan kami.</p>
+            </div>
+          </div>
+
+          <!-- Item 3: Pusat Bantuan -->
+          <div class="privacy-item-card" onclick="alert('Pusat Bantuan: Tim support RuangPulih siap membantu melalui email bantuan@ruangpulih.id atau WhatsApp kerja.')">
+            <div class="privacy-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </div>
+            <div class="privacy-details">
+              <h4>Pusat Bantuan</h4>
+              <p>Pertanyaan umum dan cara menghubungi tim pendamping kami.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Crisis Box (Matches Bottom Right of Image 4) -->
+        <div class="crisis-alert-box">
+          <div class="crisis-alert-header">
+            <div class="crisis-alert-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </div>
+            <h3>Butuh Bantuan Segera?</h3>
+          </div>
+          <p>
+            Jika kamu merasa berada dalam kondisi darurat atau memiliki pikiran untuk menyakiti diri sendiri, segera hubungi layanan bantuan profesional atau orang terdekatmu. Bantuan selalu tersedia untukmu.
+          </p>
+          <div class="crisis-buttons">
+            <button class="btn btn-crisis" onclick="alert('Menghubungi Hotline Darurat Kesehatan Mental Kemenkes: 119 Ext 8')">
+              ☎️ Halo Kemenkes 119 Ext 8
+            </button>
+            <button class="btn btn-outline" style="background:#fff; border-color:#fca5a5; color:#be123c;" onclick="alert('Yayasan Pulih Hotline: +62 811-8436-633 (Senin-Jumat 09.00 - 17.00 WIB)')">
+              Yayasan Pulih Hotline
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- General Modal for Counselor Profile / Add Action Plan -->
+  <div class="modal-overlay" id="general-modal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="modal-title">Modal Title</h3>
+        <button class="modal-close-btn" id="modal-close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div id="modal-body">
+        <!-- Content injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/illustrations.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Populate all vector SVG illustrations into their slots
+    document.addEventListener('DOMContentLoaded', () => {
+      // Alex Avatar
+      const topbarAvatar = document.getElementById('topbar-user-avatar');
+      if (topbarAvatar) topbarAvatar.innerHTML = RuangPulihIllustrations.alexAvatar;
+
+      const profileAvatar = document.getElementById('profile-user-avatar-slot');
+      if (profileAvatar) profileAvatar.innerHTML = RuangPulihIllustrations.alexAvatar;
+
+      // Streak Plant
+      const streakPlant = document.getElementById('streak-plant-slot');
+      if (streakPlant) streakPlant.innerHTML = RuangPulihIllustrations.plantPot;
+
+      const quotePlant = document.getElementById('quote-plant-slot');
+      if (quotePlant) quotePlant.innerHTML = RuangPulihIllustrations.plantPot;
+
+      // Recommended Article Thumbnail
+      const recThumb = document.getElementById('rec-article-thumb-slot');
+      if (recThumb) recThumb.innerHTML = RuangPulihIllustrations.stressManagement;
+
+      // Program Mandiri Thumbs
+      const p1 = document.getElementById('program-thumb-1');
+      if (p1) p1.innerHTML = RuangPulihIllustrations.stressManagement;
+
+      const p2 = document.getElementById('program-thumb-2');
+      if (p2) p2.innerHTML = RuangPulihIllustrations.mindfulnessMeditation;
+
+      const p3 = document.getElementById('program-thumb-3');
+      if (p3) p3.innerHTML = RuangPulihIllustrations.workLifeBalance;
+
+      const p4 = document.getElementById('program-thumb-4');
+      if (p4) p4.innerHTML = RuangPulihIllustrations.mindfulnessMeditation;
+
+      const p5 = document.getElementById('program-thumb-5');
+      if (p5) p5.innerHTML = RuangPulihIllustrations.stressManagement;
+
+      const p6 = document.getElementById('program-thumb-6');
+      if (p6) p6.innerHTML = RuangPulihIllustrations.workLifeBalance;
+
+      // Counselor Avatars
+      const dewi = document.getElementById('avatar-counselor-dewi');
+      if (dewi) dewi.innerHTML = RuangPulihIllustrations.counselorDewi;
+
+      const raka = document.getElementById('avatar-counselor-raka');
+      if (raka) raka.innerHTML = RuangPulihIllustrations.counselorRaka;
+
+      const siti = document.getElementById('avatar-counselor-siti');
+      if (siti) siti.innerHTML = RuangPulihIllustrations.counselorSiti;
+
+      // Article Thumbs
+      const art1 = document.getElementById('article-thumb-1');
+      if (art1) art1.innerHTML = RuangPulihIllustrations.stressManagement;
+
+      const art2 = document.getElementById('article-thumb-2');
+      if (art2) art2.innerHTML = RuangPulihIllustrations.workLifeBalance;
+
+      const art3 = document.getElementById('article-thumb-3');
+      if (art3) art3.innerHTML = RuangPulihIllustrations.mindfulnessMeditation;
+    });
+  </script>
+</body>
+</html>
